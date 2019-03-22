@@ -7,6 +7,7 @@ class Solution2(object):
         if n <= 5:
             return n
 
+        # 三指针
         nums = list(range(2, 6))
         ids = {
             'id2': 1,
@@ -28,7 +29,7 @@ class Solution2(object):
         return nums[-1]
 
 
-class Solution(object):
+class Solution2(object):
     def nthUglyNumber(self, n):
         """
         :type n: int
@@ -239,7 +240,31 @@ class Solution(object):
                 2038431744, 2040733440, 2048000000, 2050312500, 2066242608, 2073600000, 2097152000, 2099520000,
                 2109375000,
                 2123366400, 2125764000]
-        return nums[n-1]
+        return nums[n - 1]
+
+
+class Solution:
+    def nthUglyNumber(self, n):
+        if n <= 5:
+            return n
+
+        # 通用解法 从超级丑数中推演过来
+        nums = [0 for _ in range(n)]
+        nums[0] = 1
+        primes = [2, 3, 5]
+        k = len(primes)
+
+        carry_list = [0 for _ in range(k)]
+        number_min = [0 for _ in range(k)]
+
+        for i in range(1, n):
+            for j in range(k):
+                number_min[j] = nums[carry_list[j]] * primes[j]
+            nums[i] = min(number_min)
+            for j in range(k):
+                if nums[i] == number_min[j]:
+                    carry_list[j] += 1
+        return nums[n - 1]
 
 
 if __name__ == '__main__':
