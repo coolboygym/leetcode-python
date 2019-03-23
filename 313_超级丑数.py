@@ -1,7 +1,7 @@
 class Solution:
     def nthSuperUglyNumber(self, n, primes):
 
-        nums = [None for x in range(n)]
+        nums = [None for _ in range(n)]
         nums[0] = 1
         k = len(primes)
 
