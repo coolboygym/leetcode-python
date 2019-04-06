@@ -14,7 +14,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        # 两个堆栈实现 一次循环中遍历两个栈 代码工整而优美
+        # 两个堆栈实现 每次循环都同时遍历两个栈 代码工整而优美
         if root is None:
             return []
 
