@@ -8,7 +8,7 @@ class Solution(object):
         :rtype: str
         """
 
-        # 巧用字典排序
+        # 巧用自定义的字典排序
         def cmp(str1, str2):
             if str1 + str2 > str2 + str1:
                 return 1
