@@ -7,7 +7,7 @@
 
 
 class Solution1(object):
-    def minDepth(self, root):
+    def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
@@ -17,12 +17,10 @@ class Solution1(object):
             return 0
 
         curr_set = {root}
-        level = 1
+        level = 0
         while len(curr_set) > 0:
             next_set = set()
             for node in curr_set:
-                if node.left is None and node.right is None:
-                    return level
                 # 是否要将访问子节点是独立的两个问题 直接两个判断即可
                 if node.left is not None:
                     next_set.add(node.left)
@@ -34,19 +32,9 @@ class Solution1(object):
 
 
 class Solution(object):
-    def minDepth(self, root):
+    def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
-        if root:
-            if root.left and root.right:
-                return 1 + min(self.minDepth(root.left), self.minDepth(root.right))
-            elif root.left:
-                return 1 + self.minDepth(root.left)
-            elif root.right:
-                return 1 + self.minDepth(root.right)
-            else:
-                return 1
-        else:
-            return 0
+        return 0 if root is None else max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
