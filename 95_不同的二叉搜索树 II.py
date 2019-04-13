@@ -25,6 +25,7 @@ class Solution(object):
         return dp[1][n]
 
     def build(self, start, end, dp):
+        # 对应的区间已经构建完毕 直接返回
         if len(dp[start][end]) != 0:
             return
         # start>end 说明上次调用时start=end 也就是只有一个节点 所以这里生成一个None作为子节点
