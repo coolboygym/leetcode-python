@@ -6,20 +6,28 @@
 
 
 class Solution(object):
-    def hasCycle(self, head):
+    def detectCycle(self, head):
         """
         :type head: ListNode
-        :rtype: bool
+        :rtype: ListNode
         """
-        # 快慢指针 如果有环 在慢指针到达尾部时 快指针一定会到达尾部两次 即一定会超过慢指针一次
-        # 快指针每次比慢指针多走一步 则一定有一次会和慢指针相遇 类比生活中的追逐
+        # 先判断有无环 再找到入环点
         if head is None or head.next is None:
-            return False
+            return None
         p1 = head
         p2 = head
+        flag = False
         while p2.next and p2.next.next:
             p1 = p1.next
             p2 = p2.next.next
             if p1 == p2:
-                return True
-        return False
+                flag = True
+                break
+
+        if flag:
+            q = head
+            while q != p1:
+                q = q.next
+                p1 = p1.next
+            return q
+        return None
