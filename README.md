@@ -22,6 +22,7 @@
 - [01背包及其变种](https://cloud.tencent.com/developer/article/1036967)
 - [动态规划问题完全解析](https://blog.csdn.net/u010365335/article/details/88182369#commentBox)
 - [Morris遍历](https://blog.csdn.net/u014532901/article/details/79180855)
+- [详解KMP算法](https://www.cnblogs.com/yjiyjige/p/3263858.html)
 
 ## 补充说明
 本仓库将会持续更新，欢迎各位关注。最近更新时间：**2019-04-27**。
