@@ -5,6 +5,7 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
+        # 使用哈希表保存数字与其索引间的映射 通过一遍扫描解决
         mapping = dict()
         for i in range(len(nums)):
             element = target - nums[i]
@@ -16,8 +17,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    nums = [2, 7, 11, 15]
-    target = 9
     solution = Solution()
-    res = solution.twoSum(nums, target)
-    print(res)
+    assert solution.twoSum([2, 7, 11, 15], 9) == [0, 1]

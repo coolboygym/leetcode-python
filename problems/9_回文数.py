@@ -11,6 +11,7 @@ class Solution:
             return True
         return False
 
+
 if __name__ == '__main__':
     s = Solution()
-    print(s.isPalindrome(919))
+    assert s.isPalindrome(919) is True

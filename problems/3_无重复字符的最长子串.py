@@ -1,6 +1,11 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
         # 一次遍历 不断更新当前最长子串的起点和终点
+        # 参考链接: https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/comments/2558
         indexes = dict()
         result = 0
         start, end = 0, 0

@@ -12,18 +12,19 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        result = ListNode(0)
-        add_one = 0
-        l1_temp = l1
-        l2_temp = l2
-        res_temp = result
-        while l1_temp is not None and l2_temp is not None:
-            temp = l1_temp.val + l2_temp.val + add_one
-            res_temp.val = temp % 10
-            add_one = temp // 10
-
-            res_temp = res_temp.next = ListNode(0)
-            l2_temp = l2_temp.next
-            l1_temp = l1_temp.next
-
-        return result
+        # 同时遍历两个链表 每次往结果中加一位 最后如果还有进位则保留
+        dummy = ListNode(0)
+        curr_res = dummy
+        carry = 0
+        while l1 or l2:
+            x1 = l1.val if l1 else 0
+            x2 = l2.val if l2 else 0
+            s = carry + x1 + x2
+            carry = s // 10
+            curr_res.next = ListNode(s % 10)
+            curr_res = curr_res.next
+            l1 = l1.next if l1 else l1
+            l2 = l2.next if l2 else l2
+        if carry > 0:
+            curr_res.next = ListNode(carry)
+        return dummy.next

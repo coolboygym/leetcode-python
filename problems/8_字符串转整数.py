@@ -18,4 +18,4 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.myAtoi('123 345 www 234'))
+    assert s.myAtoi('123 345 www 234') == 123
