@@ -12,6 +12,7 @@ class Solution(object):
         :rtype: ListNode
         """
         """
+        参考链接: https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/comments/40973
         递归套路解决链表问题：
 
         找终止条件：当head指向链表只剩一个元素的时候，自然是不可能重复的，因此直接return

@@ -1,7 +1,7 @@
 import collections
 
 
-class Solution1(object):
+class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
         """
         :type beginWord: str
@@ -35,7 +35,7 @@ class Solution1(object):
         return 0
 
 
-class Solution(object):
+class Solution1(object):
     def ladderLength(self, beginWord, endWord, wordList):
         """
         :type beginWord: str
@@ -44,6 +44,7 @@ class Solution(object):
         :rtype: int
         """
         # BFS优化版 两端搜索
+        # 参考链接: https://leetcode-cn.com/problems/word-ladder/comments/21107
         word_dict = set(wordList)
         if endWord not in word_dict:
             return 0

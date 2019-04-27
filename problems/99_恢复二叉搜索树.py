@@ -6,13 +6,13 @@
 #         self.right = None
 
 
-class Solution1(object):
+class Solution(object):
     def recoverTree(self, root):
         """
         :type root: TreeNode
         :rtype: None Do not return anything, modify root in-place instead.
         """
-        # 暴力解法 重建整棵树
+        # 朴素解法 重建整棵树
         nodes = []
         values = []
         self.inorder(root, nodes, values)
@@ -30,14 +30,14 @@ class Solution1(object):
         self.inorder(root.right, nodes, values)
 
 
-class Solution(object):
+class Solution1(object):
     def recoverTree(self, root):
         """
         :type root: TreeNode
         :rtype: None Do not return anything, modify root in-place instead.
         """
-        # Morris中序遍历 还需要再琢磨下
-        # https://blog.csdn.net/u014532901/article/details/79180855
+        # 借助Morris中序遍历
+        # 参考链接: https://leetcode-cn.com/problems/recover-binary-search-tree/comments/66315
         n1, n2 = None, None
         curr1, prev = root, None
         while curr1:

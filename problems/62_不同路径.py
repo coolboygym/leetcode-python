@@ -1,11 +1,11 @@
-class Solution1(object):
+class Solution(object):
     def uniquePaths(self, m, n):
         """
         :type m: int
         :type n: int
         :rtype: int
         """
-        # 总共要走m+n-2步 其中m-1步向下 n-1步向右 排列组合问题
+        # 总共要走m+n-2步 其中m-1步向下 n-1步向右 转化为排列组合问题
         N = m + n - 2
         M = m - 1 if m < n else n - 1
         res = 1
@@ -16,7 +16,7 @@ class Solution1(object):
         return res
 
 
-class Solution(object):
+class Solution1(object):
     def uniquePaths(self, m, n):
         """
         :type m: int

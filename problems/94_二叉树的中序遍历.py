@@ -13,11 +13,12 @@ class Solution(object):
         :rtype: List[int]
         """
         # 中序遍历的迭代实现 通过条件判断的顺序来标识根节点的入栈次数 很巧妙
+        # 参考链接: https://leetcode-cn.com/problems/binary-tree-inorder-traversal/comments/2706
         res = []
         stack = []
         cur = root
-        while cur is not None or len(stack) > 0:
-            if cur is not None:
+        while cur or len(stack) > 0:
+            if cur:
                 stack.append(cur)
                 cur = cur.left
             else:

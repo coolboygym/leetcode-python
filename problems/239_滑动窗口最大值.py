@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def maxSlidingWindow(self, nums, k):
         """
         :type nums: List[int]
@@ -33,13 +33,15 @@ class Solution1(object):
         return res
 
 
-class Solution(object):
+class Solution1(object):
     def maxSlidingWindow(self, nums, k):
         """
         :type nums: List[int]
         :type k: int
         :rtype: List[int]
         """
+        # 参考链接: https://leetcode-cn.com/problems/sliding-window-maximum/comments/49412
+        # 维护一个有序队列
         from collections import deque
 
         res = []
@@ -68,11 +70,14 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    # print(s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
-    print(s.maxSlidingWindow([9, 10, 9, -7, -4, -8, 2, -6], 5))
-    print(s.maxSlidingWindow(
+    assert s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3) == [3, 3, 5, 5, 6, 7]
+    assert s.maxSlidingWindow([9, 10, 9, -7, -4, -8, 2, -6], 5) == [10, 10, 9, 2]
+    assert s.maxSlidingWindow(
         [-95, 92, -85, 59, -59, -14, 88, -39, 2, 92, 94, 79, 78, -58, 37, 48, 63, -91, 91, 74, -28, 39, 90, -9, -72,
          -88, -72, 93, 38, 14, -83, -2, 21, 4, -75, -65, 3, 63, 100, 59, -48, 43, 35, -49, 48, -36, -64, -13, -7, -29,
          87, 34, 56, -39, -5, -27, -28, 10, -57, 100, -43, -98, 19, -59, 78, -28, -91, 67, 41, -64, 76, 5, -58, -89, 83,
          26, -7, -82, -32, -76, 86, 52, -6, 84, 20, 51, -86, 26, 46, 35, -23, 30, -51, 54, 19, 30, 27, 80, 45, 22],
-        10))
+        10) == [92, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 91, 91, 91, 91, 91, 91, 91, 93, 93, 93, 93, 93, 93, 93, 93,
+                93, 93, 63, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 59, 48, 87, 87, 87, 87, 87, 87, 87, 87,
+                87, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 78, 78, 78, 78, 78, 83, 83, 83, 83, 83, 83, 86,
+                86, 86, 86, 86, 86, 86, 86, 86, 86, 84, 84, 84, 54, 54, 54, 54, 80, 80, 80]

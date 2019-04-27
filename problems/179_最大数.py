@@ -16,6 +16,7 @@ class Solution(object):
                 return -1
 
         res = ''.join(sorted([str(num) for num in nums], key=functools.cmp_to_key(cmp), reverse=True))
+
         # 去除前导0
         i = 0
         while i < len(res) - 1 and res[i] == '0':
@@ -25,6 +26,6 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.largestNumber([10, 2]))
-    print(s.largestNumber([3, 30, 34, 5, 9]))
-    print(s.largestNumber([0, 0]))
+    assert s.largestNumber([10, 2]) == '210'
+    assert s.largestNumber([3, 30, 34, 5, 9]) == '9534330'
+    assert s.largestNumber([0, 0]) == '0'

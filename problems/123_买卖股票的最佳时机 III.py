@@ -5,6 +5,7 @@ class Solution(object):
         :rtype: int
         """
         """
+        参考链接: https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/comments/10208
         动态规划 对于任意一天考虑四个变量:
         fstBuy: 在该天第一次买入股票可获得的最大收益 
         fstSell: 在该天第一次卖出股票可获得的最大收益

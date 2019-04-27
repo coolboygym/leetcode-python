@@ -1,7 +1,7 @@
 from functools import lru_cache
 
 
-class Solution1:
+class Solution:
     @lru_cache(10 ** 8)
     def climbStairs(self, n: int) -> int:
         """
@@ -9,6 +9,7 @@ class Solution1:
         :rtype: int
         """
         # 借助LRU缓存保存中间结果 相当精彩
+        # 参考链接: https://leetcode-cn.com/problems/climbing-stairs/comments/4001
         if n == 1:
             return 1
         elif n == 2:
@@ -17,8 +18,9 @@ class Solution1:
             return self.climbStairs(n - 1) + self.climbStairs(n - 2)
 
 
-class Solution:
+class Solution1:
     def climbStairs(self, n: int) -> int:
+        # 尾递归可以转化为迭代
         if n == 1:
             return 1
         if n == 2:

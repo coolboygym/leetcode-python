@@ -6,7 +6,7 @@
 #         self.right = None
 
 
-class Solution1(object):
+class Solution(object):
     def minDepth(self, root):
         """
         :type root: TreeNode
@@ -33,7 +33,7 @@ class Solution1(object):
         return level
 
 
-class Solution(object):
+class Solution1(object):
     def minDepth(self, root):
         """
         :type root: TreeNode

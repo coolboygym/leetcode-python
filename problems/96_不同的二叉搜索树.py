@@ -5,6 +5,8 @@ class Solution(object):
         :rtype: int
         """
         """
+        参考链接: https://leetcode-cn.com/problems/unique-binary-search-trees/comments/15292
+        
         动态规划
 
         假设n个节点存在二叉排序树的个数是G(n)，令f(i)为以i为根的二叉搜索树的个数

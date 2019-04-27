@@ -28,4 +28,3 @@ class Solution(object):
         root.left = self.build(pre_left + 1, pre_left + left_len, in_left, in_root - 1, preorder, inorder)
         root.right = self.build(pre_left + left_len + 1, pre_right, in_root + 1, in_right, preorder, inorder)
         return root
-

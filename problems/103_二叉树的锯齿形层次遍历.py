@@ -5,8 +5,6 @@
 #         self.left = None
 #         self.right = None
 
-import collections
-
 
 class Solution(object):
     def zigzagLevelOrder(self, root):
@@ -19,17 +17,17 @@ class Solution(object):
             return []
 
         res = []
-        s1 = collections.deque()
-        s2 = collections.deque()
+        s1 = []
+        s2 = []
         s1.append(root)
         while len(s1) > 0 or len(s2) > 0:
             temp_res = []
             while len(s1) > 0:
                 curr_node = s1.pop()
                 temp_res.append(curr_node.val)
-                if curr_node.left is not None:
+                if curr_node.left:
                     s2.append(curr_node.left)
-                if curr_node.right is not None:
+                if curr_node.right:
                     s2.append(curr_node.right)
             if temp_res:
                 res.append(temp_res)
@@ -37,9 +35,9 @@ class Solution(object):
             while len(s2) > 0:
                 curr_node = s2.pop()
                 temp_res.append(curr_node.val)
-                if curr_node.right is not None:
+                if curr_node.right:
                     s1.append(curr_node.right)
-                if curr_node.left is not None:
+                if curr_node.left:
                     s1.append(curr_node.left)
             if temp_res:
                 res.append(temp_res)

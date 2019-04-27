@@ -1,3 +1,14 @@
+class Solution(object):
+    def countNumbersWithUniqueDigits(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        # 因为n只能小于10 所以直接写答案
+        results = [1, 10, 91, 739, 5275, 32491, 168571, 712891, 2345851, 5611771, 8877691]
+        return results[n]
+
+
 class Solution1(object):
     def countNumbersWithUniqueDigits(self, n):
         """
@@ -36,14 +47,3 @@ class Solution2(object):
         for i in range(2, n + 1):
             dp[i] = dp[i - 1] + (dp[i - 1] - dp[i - 2]) * (10 - (i - 1))
         return dp[n]
-
-
-class Solution(object):
-    def countNumbersWithUniqueDigits(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        # 因为n只能小于10 所以直接写答案
-        results = [1, 10, 91, 739, 5275, 32491, 168571, 712891, 2345851, 5611771, 8877691]
-        return results[n]

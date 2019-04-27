@@ -11,6 +11,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        # 递归
         if head is None or head.next is None:
             return head
         else:
@@ -20,19 +21,20 @@ class Solution(object):
         return new_head
 
 
-class Solution2(object):
+class Solution1(object):
     def reverseList(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        if head is None or head.next is None:  # 边界条件
+        # 迭代
+        if head is None or head.next is None:
             return head
-        cur = head  # 循环变量
-        new_head = None  # 新的翻转单链表的表头
+        cur = head
+        new_head = None
         while cur:
             tmp = cur.next
             cur.next = new_head
-            new_head = cur  # 更新 新链表的表头
+            new_head = cur
             cur = tmp
         return new_head

@@ -12,6 +12,7 @@ class Solution(object):
         :rtype: ListNode
         """
         # 先判断有无环 再找到入环点
+        # 参考链接: https://leetcode-cn.com/problems/linked-list-cycle-ii/comments/307
         if head is None or head.next is None:
             return None
         p1 = head

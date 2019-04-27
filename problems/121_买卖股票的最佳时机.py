@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def maxProfit(self, prices):
         """
         :type prices: List[int]
@@ -16,13 +16,14 @@ class Solution1(object):
         return res
 
 
-class Solution(object):
+class Solution1(object):
     def maxProfit(self, prices):
         """
         :type prices: List[int]
         :rtype: int
         """
         # 更加通用的解法 可以推广到123题
+        # 参考链接: https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/comments/10208
         firstBuy = float('-inf')
         firstSell = 0
         for p in prices:

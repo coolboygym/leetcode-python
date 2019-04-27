@@ -5,6 +5,7 @@ class Solution(object):
         :rtype: int
         """
         """
+        参考链接: https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/comments/10290
         sell[i]表示截至第i天，最后一个操作是卖时的最大收益；
         buy[i]表示截至第i天，最后一个操作是买时的最大收益；
         cool[i]表示截至第i天，最后一个操作是冷冻期时的最大收益；

@@ -1,3 +1,26 @@
+class Solution(object):
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        m = len(nums)
+        n = pow(2, m)
+        i = 0
+        res = []
+        while i < n:
+            temp = []
+            j = 0
+            while j < m:
+                s = 1 << j
+                if s & i:
+                    temp.append(nums[j])
+                j += 1
+            i += 1
+            res.append(temp)
+        return res
+
+
 class Solution1(object):
     def subsets(self, nums):
         """
@@ -29,29 +52,6 @@ class Solution2(object):
         return result
 
 
-class Solution(object):
-    def subsets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        m = len(nums)
-        n = pow(2, m)
-        i = 0
-        res = []
-        while i < n:
-            temp = []
-            j = 0
-            while j < m:
-                s = 1 << j
-                if s & i:
-                    temp.append(nums[j])
-                j += 1
-            i += 1
-            res.append(temp)
-        return res
-
-
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.subsets([1, 2, 3]))
+    assert solution.subsets([1, 2, 3]) == [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]

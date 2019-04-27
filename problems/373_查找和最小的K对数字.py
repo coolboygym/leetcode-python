@@ -35,6 +35,7 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.kSmallestPairs([1, 7, 11], [2, 4, 6], 3))
-    print(s.kSmallestPairs([], [], 3))
-    print(s.kSmallestPairs([1, 1, 2], [1, 2, 3], 10))
+    assert s.kSmallestPairs([1, 7, 11], [2, 4, 6], 3) == [[1, 2], [1, 4], [1, 6]]
+    assert s.kSmallestPairs([], [], 3) == []
+    assert s.kSmallestPairs([1, 1, 2], [1, 2, 3], 10) == [[1, 1], [1, 1], [1, 2], [1, 2], [2, 1], [1, 3], [1, 3],
+                                                          [2, 2], [2, 3]]

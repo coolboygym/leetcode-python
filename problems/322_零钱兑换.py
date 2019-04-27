@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def coinChange(self, coins, amount):
         """
         :type coins: List[int]
@@ -27,7 +27,7 @@ class Solution1(object):
         return dp[amount]
 
 
-class Solution(object):
+class Solution1(object):
     def coinChange(self, coins, amount):
         """
         :type coins: List[int]

@@ -6,6 +6,7 @@ class Solution(object):
         :rtype: int
         """
         """
+        参考链接: https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/comments/10285
         当k大于等于数组长度一半时, 问题退化为贪心问题此时采用 买卖股票的最佳时机 II
         的贪心方法解决可以大幅提升时间性能, 对于其他的k, 可以采用 买卖股票的最佳时机 III
         的方法来解决, 在III中定义了两次买入和卖出时最大收益的变量, 在这里就是k租这样的

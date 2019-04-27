@@ -4,6 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+        # 参考链接: https://leetcode-cn.com/problems/132-pattern/comments/9819
         # 贪心算法 记录最大值和次大值 寻找匹配的最小值
         # 直接用数组的append和pop操作就可以实现一个栈
         # 栈中保存的是第二个数的所有候选者

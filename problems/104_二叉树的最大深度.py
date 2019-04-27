@@ -6,7 +6,7 @@
 #         self.right = None
 
 
-class Solution1(object):
+class Solution(object):
     def maxDepth(self, root):
         """
         :type root: TreeNode
@@ -31,10 +31,11 @@ class Solution1(object):
         return level
 
 
-class Solution(object):
+class Solution1(object):
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
+        # 递归解法
         return 0 if root is None else max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1

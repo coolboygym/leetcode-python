@@ -13,6 +13,7 @@ class Solution(object):
         :rtype: List[TreeNode]
         """
         """
+        参考链接: https://leetcode-cn.com/problems/unique-binary-search-trees-ii/comments/59851
         朴素递归法会存在重复计算区间，比如：
         计算[1,5]会需要计算[1,3]
         计算[1,6]也会计算[1,3] 这部分可以进行缓存：如果区间已经初始化过，直接使用即可

@@ -25,4 +25,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.subsetsWithDup([1, 1]))
+    assert solution.subsetsWithDup([1, 1]) == [[], [1], [1, 1]]

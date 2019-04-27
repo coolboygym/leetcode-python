@@ -24,4 +24,3 @@ class Solution(object):
             i = j + 1
 
         return ''.join(res)
-

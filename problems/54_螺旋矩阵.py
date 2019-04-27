@@ -6,6 +6,7 @@ class Solution(object):
         """
         # 模拟行走的过程 将走过的地方做标记 如果下一步已经走过则调转方向
         # di, dj = dj, -di 这一步可以通过实例找规律得到
+        # 参考链接: https://leetcode-cn.com/problems/spiral-matrix/comments/3271
         res, i, j, di, dj = [], 0, 0, 0, 1
         if matrix:
             m, n = len(matrix), len(matrix[0])

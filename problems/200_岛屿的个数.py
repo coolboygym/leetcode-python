@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
@@ -24,7 +24,7 @@ class Solution1(object):
             self.dfs(grid, i, j + 1)
 
 
-class Solution(object):
+class Solution1(object):
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
@@ -56,5 +56,8 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.numIslands(
-        [["1", "1", "1", "1", "0"], ["1", "1", "0", "1", "0"], ["1", "1", "0", "0", "0"], ["0", "0", "0", "0", "0"]]))
+    assert s.numIslands(
+        [["1", "1", "1", "1", "0"],
+         ["1", "1", "0", "1", "0"],
+         ["1", "1", "0", "0", "0"],
+         ["0", "0", "0", "0", "0"]]) == 1

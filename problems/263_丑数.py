@@ -14,4 +14,3 @@ class Solution(object):
             num = num // 5
 
         return num == 1
-

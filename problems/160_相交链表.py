@@ -41,11 +41,11 @@ class Solution1(object):
         :rtype: ListNode
         """
         """
-        很优雅的解法 参考https://leetcode-cn.com/problems/intersection-of-two-linked-lists/submissions/
+        参考链接: https://leetcode-cn.com/problems/intersection-of-two-linked-lists/comments/3107
+        很优雅的解法 巧妙利用了给定的条件
         定义两个指针, 第一轮让两个到达末尾的节点指向另一个链表的头部, 最后如果相遇则为交点(在第一轮移动中恰好抹除了长度差)
         两个指针等于移动了相同的距离, 有交点就返回, 无交点就是各走了两条指针的长度后同时为None 退出循环并返回None
         """
-
         if headA is None or headB is None:
             return None
         pa, pb = headA, headB

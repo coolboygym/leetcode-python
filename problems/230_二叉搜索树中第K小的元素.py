@@ -6,7 +6,7 @@
 #         self.right = None
 
 
-class Solution1(object):
+class Solution(object):
     def kthSmallest(self, root, k):
         """
         :type root: TreeNode
@@ -32,7 +32,7 @@ class Solution1(object):
         return self.find(root.right, count, k)
 
 
-class Solution:
+class Solution1:
     def kthSmallest(self, root, k):
         """
         :type root: TreeNode
@@ -41,6 +41,7 @@ class Solution:
         """
 
         # yield from 是Python3.3之后的语法
+        # 参考链接: https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/comments/13786
         def gen(r):
             if r is not None:
                 yield from gen(r.left)

@@ -12,7 +12,12 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        # 递归三步走：判断终止条件 确定返回值 分析一次调用需要做哪些事
+        """
+        递归三步走：判断终止条件 确定返回值 分析一次调用需要做哪些事
+        每次调用时需要返回两个值: 
+        1、以该节点为根的子树是否平衡
+        2、以该节点为根的子树的高度
+        """
         return self.isBST(root)[0]
 
     def isBST(self, root):

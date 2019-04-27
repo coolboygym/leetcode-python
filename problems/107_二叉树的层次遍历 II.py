@@ -24,7 +24,7 @@ class Solution1(object):
         while len(que) > 0:
             item = que.popleft()
             node, i = item[0], item[1]
-            if node is not None:
+            if node:
                 if len(res) <= i:
                     res.append([])
                 res[i].append(node.val)

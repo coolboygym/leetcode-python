@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def findCircleNum(self, M):
         """
         :type M: List[List[int]]
@@ -22,7 +22,7 @@ class Solution1(object):
                 self.dfs(matrix, visited, j)
 
 
-class Solution(object):
+class Solution1(object):
     def findCircleNum(self, M):
         """
         :type M: List[List[int]]

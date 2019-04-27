@@ -12,6 +12,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
+        # 递归三步走
         res = self.help(root)
         return max(res[0], res[1])
 

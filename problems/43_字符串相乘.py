@@ -1,7 +1,7 @@
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:
         """
-        参考网友的解答：https://leetcode-cn.com/problems/multiply-strings/comments/
+        参考链接：https://leetcode-cn.com/problems/multiply-strings/comments/
 
         num1的第i位(高位从0开始)和num2的第j位相乘的结果在乘积中的位置是[i+j, i+j+1]
         例: 123 * 45,  123的第1位 2 和45的第0位 4 乘积 08 存放在结果的第[1, 2]位中

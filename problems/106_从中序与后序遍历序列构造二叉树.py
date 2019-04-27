@@ -13,6 +13,7 @@ class Solution(object):
         :type inorder: List[int]
         :rtype: TreeNode
         """
+        # 分治法 每次构建时传入的范围包括了全部所需的节点
         return self.build(0, len(postorder) - 1, 0, len(inorder) - 1, postorder, inorder)
 
     def build(self, post_left, post_right, in_left, in_right, postorder, inorder):

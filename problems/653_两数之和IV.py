@@ -24,4 +24,3 @@ class Solution(object):
             return True
         values.add(root.val)
         return self.preOrderFind(values, root.left, k) or self.preOrderFind(values, root.right, k)
-

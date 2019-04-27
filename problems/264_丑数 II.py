@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def nthUglyNumber(self, n):
         """
         :type n: int
@@ -29,13 +29,13 @@ class Solution1(object):
         return nums[-1]
 
 
-class Solution2(object):
+class Solution1(object):
     def nthUglyNumber(self, n):
         """
         :type n: int
         :rtype: int
         """
-
+        # 直接把答案先存好
         nums = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 25, 27, 30, 32, 36, 40, 45, 48, 50, 54, 60, 64, 72,
                 75,
                 80, 81, 90, 96, 100, 108, 120, 125, 128, 135, 144, 150, 160, 162, 180, 192, 200, 216, 225, 240, 243,
@@ -243,7 +243,7 @@ class Solution2(object):
         return nums[n - 1]
 
 
-class Solution:
+class Solution2:
     def nthUglyNumber(self, n):
         if n <= 5:
             return n

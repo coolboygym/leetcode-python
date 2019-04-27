@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def findLadders(self, beginWord, endWord, wordList):
         """
         :type beginWord: str
@@ -59,7 +59,7 @@ class Solution1(object):
                 path.pop()
 
 
-class Solution(object):
+class Solution1(object):
     def findLadders(self, beginWord, endWord, wordList):
         """
         :type beginWord: str
@@ -68,6 +68,7 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         # 评论区大佬解法 优化的BFS 双端搜索
+        # 参考链接: https://leetcode-cn.com/problems/word-ladder/comments/21107
         from collections import defaultdict
         if endWord not in wordList:
             return []
@@ -101,5 +102,6 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.findLadders('hit', 'cog', ["hot", "dot", "dog", "lot", "log", "cog"]))
-    print(s.findLadders('a', 'c', ['a', 'b', 'c']))
+    assert s.findLadders('hit', 'cog', ["hot", "dot", "dog", "lot", "log", "cog"]) == [
+        ['hit', 'hot', 'dot', 'dog', 'cog'], ['hit', 'hot', 'lot', 'log', 'cog']]
+    assert s.findLadders('a', 'c', ['a', 'b', 'c']) == [['a', 'c']]

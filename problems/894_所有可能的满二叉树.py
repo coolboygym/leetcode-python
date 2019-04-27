@@ -7,6 +7,7 @@ class TreeNode(object):
 
 
 class Solution(object):
+    # 定义全局变量保存当前已经计算过的结果
     memo = {1: [TreeNode(0)]}
 
     def allPossibleFBT(self, N):

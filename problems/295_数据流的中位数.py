@@ -6,6 +6,7 @@ class MedianFinder(object):
         """
         initialize your data structure here.
         """
+        # 借助两个栈
         self._h_min = []
         self._h_max = []
 
@@ -45,7 +46,6 @@ if __name__ == '__main__':
     s = MedianFinder()
     s.addNum(1)
     s.addNum(2)
-    print(s.findMedian())
+    assert s.findMedian() == 1.5
     s.addNum(3)
-    print(s.findMedian())
-
+    assert s.findMedian() == 2

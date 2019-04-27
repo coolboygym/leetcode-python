@@ -13,12 +13,13 @@ class TreeNode(object):
         self.right = None
 
 
-class Solution1(object):
+class Solution(object):
     def sortedListToBST(self, head):
         """
         :type head: ListNode
         :rtype: TreeNode
         """
+        # 朴素解法 先得到数组再构建
         values = []
         while head is not None:
             values.append(head.val)
@@ -35,7 +36,7 @@ class Solution1(object):
         return root
 
 
-class Solution(object):
+class Solution1(object):
     def sortedListToBST(self, head):
         """
         :type head: ListNode

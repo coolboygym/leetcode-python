@@ -5,7 +5,8 @@
 #         self.left = None
 #         self.right = None
 
-class Solution1(object):
+
+class Solution(object):
     def rightSideView(self, root):
         """
         :type root: TreeNode
@@ -26,7 +27,7 @@ class Solution1(object):
         self.preOrder(root.right, depth + 1, result_array)
 
 
-class Solution(object):
+class Solution1(object):
     def rightSideView(self, root):
         """
         :type root: TreeNode

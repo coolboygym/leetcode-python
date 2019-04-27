@@ -4,6 +4,8 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        # 借助四平方和定理及其推论
+        # 参考链接: https://leetcode-cn.com/problems/perfect-squares/comments/7455
         while n % 4 == 0:
             n /= 4
         if n % 8 == 7:

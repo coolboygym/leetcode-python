@@ -1,4 +1,4 @@
-class Solution2(object):
+class Solution(object):
     def kthSmallest(self, matrix, k):
         """
         :type matrix: List[List[int]]
@@ -29,7 +29,7 @@ class Solution2(object):
         return heapq.heappop(h)[0]
 
 
-class Solution(object):
+class Solution1(object):
     def kthSmallest(self, matrix, k):
         """
         :type matrix: List[List[int]]

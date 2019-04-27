@@ -8,13 +8,13 @@
 import collections
 
 
-class Solution1(object):
+class Solution(object):
     def levelOrder(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        # 拓扑排序
+        # 借助拓扑排序
         if root is None:
             return []
 
@@ -34,7 +34,7 @@ class Solution1(object):
         return res
 
 
-class Solution(object):
+class Solution1(object):
     def levelOrder(self, root):
         """
         :type root: TreeNode

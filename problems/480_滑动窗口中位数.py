@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def medianSlidingWindow(self, nums, k):
         """
         :type nums: List[int]
@@ -110,7 +110,7 @@ class HashHeap:
         self.hash[elem2] = i
 
 
-class Solution:
+class Solution1:
     def __init__(self):
         self.max_heap = HashHeap(desc=True)
         self.min_heap = HashHeap()
@@ -163,10 +163,10 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.medianSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
+    assert s.medianSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3) == [1.0, -1.0, -1.0, 3.0, 5.0, 6.0]
     s = Solution()
-    print(s.medianSlidingWindow([1, 4, 2, 3], 4))
+    assert s.medianSlidingWindow([1, 4, 2, 3], 4) == [2.5]
     s = Solution()
-    print(s.medianSlidingWindow([1], 1))
+    assert s.medianSlidingWindow([1], 1) == [1.0]
     s = Solution()
-    print(s.medianSlidingWindow([5, 5, 8, 1, 4, 7, 1, 3, 8, 4], 8))
+    assert s.medianSlidingWindow([5, 5, 8, 1, 4, 7, 1, 3, 8, 4], 8) == [4.5, 4.5, 4.0]

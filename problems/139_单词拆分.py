@@ -1,4 +1,4 @@
-class Solution0(object):
+class Solution(object):
     def wordBreak(self, s, wordDict):
         """
         :type s: str
@@ -18,7 +18,7 @@ class Solution0(object):
         return False
 
 
-class Solution(object):
+class Solution1(object):
     def wordBreak(self, s, wordDict):
         """
         :type s: str

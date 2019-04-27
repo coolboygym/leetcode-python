@@ -1,10 +1,10 @@
-class Solution1(object):
+class Solution(object):
     def maxSubArray(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        # 解决问题的核心: 如果前面某一段和为负数则舍弃
+        # 解决本题的核心: 如果前面某一段和为负数则舍弃
         max_so_far, max_ending_here = nums[0], nums[0]
         for i in range(1, len(nums)):
             max_ending_here = max(max_ending_here + nums[i], nums[i])
@@ -12,7 +12,7 @@ class Solution1(object):
         return max_so_far
 
 
-class Solution(object):
+class Solution1(object):
     def maxSubArray(self, nums):
         """
         :type nums: List[int]

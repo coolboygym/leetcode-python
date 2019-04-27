@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def maxEnvelopes(self, envelopes):
         """
         :type envelopes: List[List[int]]
@@ -16,7 +16,7 @@ class Solution1(object):
         return max(dp)
 
 
-class Solution(object):
+class Solution1(object):
     def maxEnvelopes(self, envelopes):
         """
         :type envelopes: List[List[int]]
@@ -29,6 +29,7 @@ class Solution(object):
         import functools
 
         """
+        参考链接: https://leetcode-cn.com/problems/russian-doll-envelopes/comments/10638
         O(NlogN)的做法, 按照长度升序, 同长则宽度降序排列, 然后使用O(logN)
         的最长递增子序列解法(链接在评论中)来做即可. 排序后等于把在二维(长、宽)
         上的最长递增子序列问题转换成一维(宽)上的最长递增子序列的查找, 因为对于

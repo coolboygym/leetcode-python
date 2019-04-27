@@ -1,4 +1,4 @@
-class Solution1(object):
+class Solution(object):
     def lengthOfLIS(self, nums):
         """
         :type nums: List[int]
@@ -20,7 +20,7 @@ class Solution1(object):
         return max(dp)
 
 
-class Solution(object):
+class Solution1(object):
     def lengthOfLIS(self, nums):
         """
         :type nums: List[int]

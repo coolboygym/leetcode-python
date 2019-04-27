@@ -47,4 +47,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.canFinish(3, [[1, 0], [1, 2], [0, 1]]))
+    assert s.canFinish(3, [[1, 0], [1, 2], [0, 1]]) == []
