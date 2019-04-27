@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = None
 
 
-class Solution1(object):
+class Solution(object):
     def mergeTwoLists(self, l1, l2):
         """
         :type l1: ListNode
@@ -13,9 +13,6 @@ class Solution1(object):
         :rtype: ListNode
         """
         # 双指针 三while
-        if l1 is None and l2 is None:
-            return None
-
         dummy = ListNode(-1)
         curr = dummy
         while l1 is not None and l2 is not None:
@@ -30,9 +27,9 @@ class Solution1(object):
                 l2 = l2.next
                 curr = curr.next
 
-        if l1 is not None:
+        if l1:
             curr.next = l1
-        elif l2 is not None:
+        elif l2:
             curr.next = l2
         else:
             curr.next = None
@@ -40,16 +37,13 @@ class Solution1(object):
         return dummy.next
 
 
-class Solution(object):
+class Solution1(object):
     def mergeTwoLists(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
         :rtype: ListNode
         """
-        if l1 is None and l2 is None:
-            return None
-
         dummy = ListNode(-1)
         curr = dummy
         while l1 is not None and l2 is not None:
@@ -62,9 +56,9 @@ class Solution(object):
                 l2 = l2.next
                 curr = curr.next
 
-        if l1 is not None:
+        if l1:
             curr.next = l1
-        elif l2 is not None:
+        elif l2:
             curr.next = l2
         else:
             curr.next = None

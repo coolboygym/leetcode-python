@@ -1,10 +1,11 @@
-class Solution1(object):
+class Solution(object):
     def strStr(self, haystack, needle):
         """
         :type haystack: str
         :type needle: str
         :rtype: int
         """
+        # 朴素解法 时间复杂度O(m*n)
         if needle == '':
             return 0
 
@@ -27,7 +28,7 @@ class Solution1(object):
         return -1
 
 
-class Solution(object):
+class Solution1(object):
     def strStr(self, haystack, needle):
         """
         :type haystack: str

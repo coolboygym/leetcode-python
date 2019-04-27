@@ -14,6 +14,7 @@ class Solution(object):
         """
         check_node = head
         num = 0
+        # 检查链表中是否包含k个节点 若无直接返回head
         while num < k and check_node is not None:
             num += 1
             check_node = check_node.next

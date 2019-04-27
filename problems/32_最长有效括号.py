@@ -1,9 +1,10 @@
-class Solution2(object):
+class Solution(object):
     def longestValidParentheses(self, s):
         """
         :type s: str
         :rtype: int
         """
+        # 参考链接: https://leetcode-cn.com/problems/longest-valid-parentheses/comments/4729
         return max(self.get_max(s, 0, len(s), 1, '('),
                    self.get_max(s, len(s) - 1, -1, -1, ')'))
 
@@ -26,15 +27,14 @@ class Solution2(object):
         return max(result, valid_len)
 
 
-class Solution:
+class Solution1:
     def longestValidParentheses(self, s):
         """
         :type s: str
         :rtype: bool
         """
-        from collections import deque
-
-        stack = deque()
+        # 朴素解法 借助一个栈不断合并有效的括号
+        stack = []
         for i, char in enumerate(s):
             if char == '(':
                 stack.append((i, char))

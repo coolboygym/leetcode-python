@@ -5,6 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
+        # 二分查找的扩展
         l = 0
         r = len(nums) - 1
         while l <= r:
@@ -20,7 +21,7 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.searchInsert([1, 3, 5, 6], 5))
-    print(s.searchInsert([1, 3, 5, 6], 2))
-    print(s.searchInsert([1, 3, 5, 6], 7))
-    print(s.searchInsert([1, 3, 5, 6], 0))
+    assert s.searchInsert([1, 3, 5, 6], 5) == 2
+    assert s.searchInsert([1, 3, 5, 6], 2) == 1
+    assert s.searchInsert([1, 3, 5, 6], 7) == 4
+    assert s.searchInsert([1, 3, 5, 6], 0) == 0

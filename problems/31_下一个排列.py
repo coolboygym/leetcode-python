@@ -4,7 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        # 对于有边界条件的题目 while 比 for 更直观
+        # 对于有边界条件的题目while比for更直观
+        # 参考链接: https://leetcode-cn.com/problems/next-permutation/solution/
         n = len(nums)
         i = n - 2
         while i >= 0 and nums[i + 1] <= nums[i]:
@@ -28,7 +29,15 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.nextPermutation([3, 1, 2]))
-    print(s.nextPermutation([3, 1, 1]))
-    print(s.nextPermutation([1, 3, 1]))
-    print(s.nextPermutation([1, 1, 3]))
+    input_array = [3, 1, 2]
+    s.nextPermutation(input_array)
+    assert input_array == [3, 2, 1]
+    input_array = [3, 1, 1]
+    s.nextPermutation(input_array)
+    assert input_array == [1, 1, 3]
+    input_array = [1, 3, 1]
+    s.nextPermutation(input_array)
+    assert input_array == [3, 1, 1]
+    input_array = [1, 1, 3]
+    s.nextPermutation(input_array)
+    assert input_array == [1, 3, 1]

@@ -1,10 +1,11 @@
-class Solution1(object):
+class Solution(object):
     def searchRange(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
+        # 二分查找的扩展
         l = 0
         n = len(nums)
         r = n - 1
@@ -26,8 +27,9 @@ class Solution1(object):
         return [-1, -1]
 
 
-class Solution:
+class Solution1:
     def searchRange(self, nums, target):
+        # 朴素解法 一次遍历
         loc = [-1, -1]
         for i in range(len(nums)):
             if nums[i] == target:
@@ -40,6 +42,6 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.searchRange([5, 7, 7, 8, 8, 10], 8))
-    print(s.searchRange([5, 7, 7, 8, 8, 10], 6))
-    print(s.searchRange([5, 7, 7, 8, 8, 10], 5))
+    assert s.searchRange([5, 7, 7, 8, 8, 10], 8) == [3, 4]
+    assert s.searchRange([5, 7, 7, 8, 8, 10], 6) == [-1, -1]
+    assert s.searchRange([5, 7, 7, 8, 8, 10], 5) == [0, 0]

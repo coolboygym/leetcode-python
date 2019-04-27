@@ -15,6 +15,7 @@ class Solution(object):
             c = candidates[i]
             if target % c == 0:
                 result.append([c] * (target // c))
+
             # 这里k的遍历终点是target // c - 1 而非target // c
             # 由于数组已排序 当k等于target // c 时余下的target肯定比之后所有数都更小 无需尝试
             for k in range(1, target // c):
