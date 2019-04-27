@@ -16,7 +16,7 @@
 - [LeetCode 239. 滑动窗口最大值](https://blog.csdn.net/MiMicoa/article/details/88707722)
 
 ## 参考资料
-在解题的过程中，参考了一些网友们分享的神奇思路和总结性的文档，在此由衷感谢！我将这些资源罗列在下方，供各位参考。
+在解题过程中，参考了网友们分享的神奇思路和总结性的文档，在此由衷感谢！我将这些资源罗列在下方，供各位参考。
 
 - [3道题彻底搞定：套路解决递归问题](http://39.96.217.32/blog/4#comment-container)
 - [01背包及其变种](https://cloud.tencent.com/developer/article/1036967)
