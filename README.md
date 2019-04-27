@@ -1,6 +1,6 @@
 # 使用Python解决LeetCode算法题
 
-本仓库主要记录自己在**LeetCode**上**AC**的代码，全部使用**Python**实现。
+本仓库主要记录自己在[LeetCode](https://leetcode-cn.com/problemset/algorithms/)上**AC**的代码，全部使用**Python**实现。
 其中一些代码参考了评论区中的高票回答，在代码中给出了参考链接，在此感谢各位网友的无私分享。
 
 对于每一个问题，代码中的关键部分会标有简要的注释，如果有多种解法也会以**Solution1**、**Solution2**等方式给出。
