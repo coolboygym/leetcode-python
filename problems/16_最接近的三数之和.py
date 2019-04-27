@@ -5,7 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        # 遍历 + 双指针
+        # 遍历 + 双指针 不断更新当前最接近的三数之和 如果和等于目标值则直接返回
         nums.sort()
         close_sum = nums[0] + nums[1] + nums[2]
         size = len(nums)
@@ -27,4 +27,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.threeSumClosest([-1, 2, 1, -4], 1))
+    assert s.threeSumClosest([-1, 2, 1, -4], 1) == 2

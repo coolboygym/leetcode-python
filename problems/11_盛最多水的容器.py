@@ -1,9 +1,11 @@
-class Solution2(object):
+class Solution(object):
     def maxArea(self, height):
         """
         :type height: List[int]
         :rtype: int
         """
+        # 双指针 不断更新当前面积与最大面积
+        # 参考链接: https://leetcode-cn.com/problems/container-with-most-water/solution/
         i = 0
         j = len(height) - 1
         max_area = min(height[i], height[j]) * j
@@ -11,23 +13,21 @@ class Solution2(object):
             if height[i] < height[j]:
                 i += 1
                 curr_area = min(height[i], height[j]) * (j - i)
-                if curr_area > max_area:
-                    max_area = curr_area
+                max_area = max(max_area, curr_area)
             else:
                 j -= 1
                 curr_area = min(height[i], height[j]) * (j - i)
-                if curr_area > max_area:
-                    max_area = curr_area
+                max_area = max(max_area, curr_area)
         return max_area
 
 
-class Solution(object):
+class Solution1(object):
     def maxArea(self, height):
         """
         :type height: List[int]
         :rtype: int
         """
-        # 参考快速排序的写法
+        # 参考快速排序的写法改进前一种方法 双指针 三个while语句
         i = 0
         j = len(height) - 1
         max_area = min(height[i], height[j]) * j

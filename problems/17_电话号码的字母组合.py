@@ -1,4 +1,4 @@
-class Solution2(object):
+class Solution(object):
     def letterCombinations(self, digits):
         """
         :type digits: str
@@ -28,7 +28,7 @@ class Solution2(object):
         return res
 
 
-class Solution(object):
+class Solution1(object):
     def letterCombinations(self, digits):
         """
         :type digits: str
@@ -65,5 +65,5 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.letterCombinations('2'))
-    print(s.letterCombinations('23'))
+    assert s.letterCombinations('2') == ['a', 'b', 'c']
+    assert s.letterCombinations('23') == ['ad', 'bd', 'cd', 'ae', 'be', 'ce', 'af', 'bf', 'cf']

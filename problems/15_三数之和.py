@@ -4,6 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        # 选出第一个数后转化为两数之和 对数组做排序方便过滤重复项 时间复杂度O(n^2)
         result = []
         size = len(nums)
         nums = sorted(nums)
@@ -34,5 +35,5 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.threeSum([1, 0, -1, 0, -2, 2]))
-    print(s.threeSum([0, 0, 0, 0]))
+    assert s.threeSum([1, 0, -1, 0, -2, 2]) == [[-2, 0, 2], [-1, 0, 1]]
+    assert s.threeSum([0, 0, 0, 0]) == [[0, 0, 0]]

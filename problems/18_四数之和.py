@@ -5,6 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
+        # 加一层循环 转化为三数之和
         nums = sorted(nums)
         result = list()
         size = len(nums)
@@ -40,5 +41,5 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.fourSum([1, 0, -1, 0, -2, 2], 0))
-    print(s.fourSum([0, 0, 0, 0], 0))
+    assert s.fourSum([1, 0, -1, 0, -2, 2], 0) == [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+    assert s.fourSum([0, 0, 0, 0], 0) == [[0, 0, 0, 0]]
