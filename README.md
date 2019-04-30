@@ -11,6 +11,7 @@
 
 - [LeetCode 4. 寻找两个有序数组的中位数](https://blog.csdn.net/MiMicoa/article/details/89042780)
 - [LeetCode 23. 合并K个排序链表](https://blog.csdn.net/MiMicoa/article/details/88661264)
+- [LeetCode 42. 接雨水](https://zhuanlan.zhihu.com/p/64377940)
 - [LeetCode 98. 验证二叉搜索树](https://blog.csdn.net/MiMicoa/article/details/88567135)
 - [LeetCode 146. LRU缓存机制](https://blog.csdn.net/MiMicoa/article/details/88581029)
 - [LeetCode 239. 滑动窗口最大值](https://blog.csdn.net/MiMicoa/article/details/88707722)
@@ -25,7 +26,7 @@
 - [详解KMP算法](https://www.cnblogs.com/yjiyjige/p/3263858.html)
 
 ## 补充说明
-本仓库将会持续更新，欢迎各位关注。最近更新时间：**2019-04-29**。
+本仓库将会持续更新，欢迎各位关注。最近更新时间：**2019-04-30**。
 
 如果你发现代码中有冗余或者不清晰的地方，欢迎指出，我们可以一起来维护一个比较完善的**LeetCode**代码仓库。
 
