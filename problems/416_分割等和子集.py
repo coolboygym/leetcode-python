@@ -25,4 +25,13 @@ class Solution(object):
                 # 状态转移方程：不使用第i个物品或者使用第i个物品
                 dp[j] = (dp[j] or dp[j - num])
 
+            # 如果已经找到组合方案即可停止寻找
+            if dp[target]:
+                break
+
         return dp[target]
+
+
+if __name__ == '__main__':
+    s = Solution()
+    assert s.canPartition([1, 5, 5, 11]) is True

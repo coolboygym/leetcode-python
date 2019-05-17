@@ -4,13 +4,14 @@
 #         self.val = x
 #         self.next = None
 
-# 单调队列
+
 class Solution(object):
     def nextLargerNodes(self, head):
         """
         :type head: ListNode
         :rtype: List[int]
         """
+        # 单调队列
         d = {}
         length = 0
         stack = []
@@ -26,3 +27,30 @@ class Solution(object):
         for k, v in d.items():
             result[k] = v
         return result
+
+
+class Solution1(object):
+    def nextLargerNodes(self, head):
+        """
+        :type head: ListNode
+        :rtype: List[int]
+        """
+        # 先求链表长度 再用单调队列
+        l = 0
+        curr = head
+        while curr:
+            l += 1
+            curr = curr.next
+
+        q = []
+        ans = [0] * l
+        curr = head
+        i = 0
+        while curr:
+            while q and q[-1][0] < curr.val:
+                ans[q[-1][1]] = curr.val
+                q.pop()
+            q.append((curr.val, i))
+            i += 1
+            curr = curr.next
+        return ans
