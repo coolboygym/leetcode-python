@@ -28,8 +28,6 @@ class Solution1(object):
         :rtype: ListNode
         """
         # 迭代
-        if head is None or head.next is None:
-            return head
         cur = head
         new_head = None
         while cur:
