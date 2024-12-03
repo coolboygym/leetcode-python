@@ -28,11 +28,11 @@ class Solution1(object):
         :rtype: ListNode
         """
         # 迭代
-        cur = head
+        curr = head
         new_head = None
-        while cur:
-            tmp = cur.next
-            cur.next = new_head
-            new_head = cur
-            cur = tmp
+        while curr:
+            tmp = curr.next
+            curr.next = new_head
+            new_head = curr
+            curr = tmp
         return new_head

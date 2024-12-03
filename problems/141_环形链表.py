@@ -12,7 +12,7 @@ class Solution(object):
         :rtype: bool
         """
         # 快慢指针 如果有环 在慢指针到达尾部时 快指针一定会到达尾部两次 即一定会超过慢指针一次
-        # 快指针每次比慢指针多走一步 则一定有一次会和慢指针相遇 类比生活中的追逐
+        # 快指针每次比慢指针多走一步 则一定有一次会和慢指针相遇 因为相对于慢指针来说 快指针每次更接近它一格
         if head is None or head.next is None:
             return False
         p1 = head

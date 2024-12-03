@@ -1,26 +1,32 @@
+class Node(object):
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+
+
 class LRUCache(object):
+
     def __init__(self, capacity):
         """
         :type capacity: int
         """
         self.capacity = capacity
-        self.size = 0
-        self.double_list = DoubleList()
-        self.mapping = dict()
+        self.dummy = Node()
+        self.dummy.prev = self.dummy
+        self.dummy.next = self.dummy
+        self.key_value_map = dict()
+        
 
     def get(self, key):
         """
         :type key: int
         :rtype: int
         """
-        target_node = self.mapping.get(key, None)
-        if target_node is not None:
-            result = target_node.value
-            self.double_list.delete(target_node)
-            self.double_list.insert(target_node)
-            return result
-        else:
-            return -1
+        node = self.get_node(key)
+        return node.value if node else -1
+        
 
     def put(self, key, value):
         """
@@ -28,64 +34,45 @@ class LRUCache(object):
         :type value: int
         :rtype: None
         """
-        target_node = self.mapping.get(key, None)
-        if target_node is not None:
-            target_node.value = value
-            self.double_list.delete(target_node)
-            self.double_list.insert(target_node)
-        else:
-            if self.size == self.capacity:
-                temp_key = self.double_list.delete_tail_node()
-                self.size -= 1
-                del self.mapping[temp_key]
-            new_node = ListNode(key=key, value=value)
-            self.mapping[key] = new_node
-            self.double_list.insert(new_node)
-            self.size += 1
+        node = self.get_node(key)
+        # key已经存在
+        if node:
+            node.value = value
+            return
+        # key不存在，创建新节点并移到最前面
+        node = Node(key, value)
+        self.key_value_map[key] = node
+        self.push_front(node)
+        # 数量超过容量，在映射表和链表中都删除最后一个节点
+        if len(self.key_value_map) > self.capacity:
+            last_node = self.dummy.prev
+            del self.key_value_map[last_node.key]
+            self.remove(last_node)
+    
+    # 获取key对应的节点，并移到链表最前面(因为该节点被访问了)
+    def get_node(self, key):
+        if key not in self.key_value_map:
+            return None
+        node = self.key_value_map[key]
+        self.remove(node)
+        self.push_front(node)
+        return node
+    
+    def remove(self, x):
+        x.prev.next = x.next
+        x.next.prev = x.prev
+    
+    # 把节点移到表头
+    def push_front(self, x):
+        x.prev = self.dummy
+        x.next = self.dummy.next
+        x.prev.next = x
+        x.next.prev = x
 
-
-class ListNode(object):
-    def __init__(self, key=None, value=None):
-        self.left_pointer = None
-        self.right_pointer = None
-        self.key = key
-        self.value = value
-
-    def get_value(self):
-        return self.value
-
-
-class DoubleList(object):
-    def __init__(self):
-        self.head = ListNode()
-        self.tail = ListNode()
-        self.head.right_pointer = self.tail
-        self.tail.left_pointer = self.head
-
-    def insert(self, target_node):
-        # 在链表开头插入新节点
-        second_node = self.head.right_pointer
-        target_node.right_pointer = second_node
-        target_node.left_pointer = self.head
-        self.head.right_pointer = target_node
-        second_node.left_pointer = target_node
-
-    @staticmethod
-    def delete(target_node):
-        # 删除指定的节点
-        front_node = target_node.left_pointer
-        behind_node = target_node.right_pointer
-        front_node.right_pointer = behind_node
-        behind_node.left_pointer = front_node
-        target_node.left_pointer = None
-        target_node.right_pointer = None
-
-    def delete_tail_node(self):
-        # 删除在队尾的节点
-        target_node = self.tail.left_pointer
-        key = target_node.key
-        self.delete(target_node)
-        return key
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 
 
 if __name__ == '__main__':
