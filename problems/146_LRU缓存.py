@@ -16,7 +16,7 @@ class LRUCache(object):
         self.dummy = Node()
         self.dummy.prev = self.dummy
         self.dummy.next = self.dummy
-        self.key_value_map = dict()
+        self.key_node_map = dict()
         
 
     def get(self, key):
@@ -41,19 +41,19 @@ class LRUCache(object):
             return
         # key不存在，创建新节点并移到最前面
         node = Node(key, value)
-        self.key_value_map[key] = node
+        self.key_node_map[key] = node
         self.push_front(node)
         # 数量超过容量，在映射表和链表中都删除最后一个节点
-        if len(self.key_value_map) > self.capacity:
+        if len(self.key_node_map) > self.capacity:
             last_node = self.dummy.prev
-            del self.key_value_map[last_node.key]
+            del self.key_node_map[last_node.key]
             self.remove(last_node)
     
     # 获取key对应的节点，并移到链表最前面(因为该节点被访问了)
     def get_node(self, key):
-        if key not in self.key_value_map:
+        if key not in self.key_node_map:
             return None
-        node = self.key_value_map[key]
+        node = self.key_node_map[key]
         self.remove(node)
         self.push_front(node)
         return node
